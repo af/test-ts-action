@@ -2,6 +2,9 @@ name: 'Your name here'
 description: 'Provide a description here'
 author: 'Your name or organization here'
 inputs:
+  config_file:
+    description: 'your toml config file'
+    default: 'myconfig.tml'
   milliseconds: # change this
     required: true
     description: 'input description here'
