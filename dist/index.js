@@ -2521,9 +2521,9 @@ const fs = __importStar(__webpack_require__(747));
 const path = __importStar(__webpack_require__(622));
 const core = __importStar(__webpack_require__(470));
 const toml_1 = __importDefault(__webpack_require__(197));
+const configName = core.getInput('config_file');
 // TODO: getInput() doesn't seem to get the yaml default value during tests?
-const configName = core.getInput('config_file') || 'myconfig.toml';
-const configPath = path.join(process.cwd(), configName);
+const configPath = path.join(process.cwd(), configName || 'myconfig.toml');
 function wait(milliseconds) {
     return __awaiter(this, void 0, void 0, function* () {
         console.log('PRINTING LS');

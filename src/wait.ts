@@ -5,9 +5,9 @@ import * as path from 'path'
 import * as core from '@actions/core'
 import TOML from '@iarna/toml'
 
+const configName = core.getInput('config_file')
 // TODO: getInput() doesn't seem to get the yaml default value during tests?
-const configName = core.getInput('config_file') || 'myconfig.toml'
-const configPath = path.join(process.cwd(), configName)
+const configPath = path.join(process.cwd(), configName || 'myconfig.toml')
 
 export async function wait(milliseconds: number): Promise<string> {
   console.log('PRINTING LS')
